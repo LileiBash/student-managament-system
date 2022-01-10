@@ -1,0 +1,63 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+}
+ul{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    list-style: none;
+    gap: 1rem;
+    justify-content: center;
+    text-transform: capitalize;
+    margin: 2rem;
+}
+ul li a{
+    text-decoration: none;
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    /* padding: 10rem; */
+    margin: 0rem auto;
+    width: 30%;
+    justify-content: center;
+
+}
+
+input[type=text] {
+    padding: .4rem;
+}
+div.home{
+    padding: 5rem;
+    /* text-transform: capitalize; */
+}
+div.blogs{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 1rem;
+    margin: 0rem 5rem;
+}
+div.blogs div.blog{
+    width: 300px;
+    padding: 1rem;
+    background-color: wheat;
+    border-radius: 5px;
+
+}
+button{
+    background-color: red;
+    color: white;
+    padding: 1rem;
+    width: fit-content;
+    width: -moz-fit-content;
+    
+}
