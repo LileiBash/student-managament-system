@@ -57,14 +57,13 @@ app.get('/blogs', (req, res)=>{
 })
 
 app.post('/blogs', (req, res) => {
-    // const blog = new Blog(req.body);
-    // blog.save()
-    //     .then(result => {
-    //         res.redirect('/blogs')
-    //     })
-    //     .catch((error)=> console.log(error))
     const blog = new Blog(req.body);
-    console.log(blog);
+    blog.save()
+        .then(result => {
+            res.redirect('/blogs')
+        })
+        .catch((error)=> console.log(error))
+
 })
 
 app.get('/create/blogs', (req, res)=>{
