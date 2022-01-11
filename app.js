@@ -70,8 +70,3 @@ app.post('/blogs', (req, res) => {
 app.get('/create/blogs', (req, res)=>{
     res.render('create')
 })
-
-<<<<<<< HEAD
-=======
-
->>>>>>> parent of 19d64a7 (hello bro)
