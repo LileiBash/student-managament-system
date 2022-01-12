@@ -3,39 +3,91 @@
     margin: 0;
     box-sizing: border-box;
 }
+html{
+    font-size: 100%;
+}
 
 body {
-    min-height: 100vh;
+    /* min-height: 100vh; */
+    height: 100vh;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-bottom: 3rem;
+    background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
 }
-ul{
+div.fix{
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+}
+
+header{
+    /* border: 1px solid black; */
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    list-style: none;
-    gap: 1rem;
-    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
     text-transform: capitalize;
-    margin: 2rem;
+    /* border-bottom: 1px solid rgb(0, 54, 201); */
+    box-shadow: 0px 0px 30px 2px rgba(0, 0, 0, 1);
+    margin: 0rem 0rem;
+    padding-bottom: 1rem;
 }
-ul li a{
+header{
+    background-color: bisque;
+}
+header div.logo{
+    /* border: 1px solid black; */
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    padding-left: .5rem;
+}
+header ul {
+    /* border: 1px solid black; */
+    display: flex;
+    gap: 3rem;
+    list-style: none;
+    align-self: flex-end;
+    margin: 0rem .5rem;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+}
+header ul li a{
     text-decoration: none;
 }
+/* div.test{
+    border: 1px solid black;
+} */
+
 
 
 form {
     display: flex;
     flex-direction: column;
     /* padding: 10rem; */
-    margin: 0rem auto;
+    margin: 14rem auto;
     width: 30%;
     justify-content: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    
 
 }
 
-input[type=text] {
+/* input[type=text] {
     padding: .4rem;
+    font-size: 1.4rem;
+} */
+input, textarea{
+    margin: .2rem 0rem 1rem 0rem;
+    font-size: 1.4rem;
+    padding: .4rem;
+
 }
+
 div.home{
+    /* about page  */
+    margin: 14rem 0rem;
     padding: 5rem;
     /* text-transform: capitalize; */
 }
@@ -44,20 +96,93 @@ div.blogs{
     flex-wrap: wrap;
     flex-direction: row;
     gap: 1rem;
-    margin: 0rem 5rem;
+    margin: 8rem auto 0rem auto;
+    padding: 0rem 1rem;
+
+
 }
-div.blogs div.blog{
+div.blog{
     width: 300px;
     padding: 1rem;
     background-color: wheat;
     border-radius: 5px;
+    cursor:default;
+    flex: 1 1 auto;
 
 }
+div.blog a{
+    text-decoration: none;
+    
+}
+div.blog a h2{
+    text-transform: uppercase;
+    color: black;  
+}
+div.blog a h2:hover{
+    color: rgb(34, 34, 230);
+}
+
+
+
+
+
+.details{
+    position: relative;
+    text-transform: uppercase;
+    margin: 1rem;
+}
+.content{
+    margin-bottom: 2rem;
+    text-transform: none;
+}
+.delete{
+    /* take note  */
+    position: absolute;
+    left: 50%;
+    bottom: 0%;
+    transform: translate(-50%, -50%);
+    border-radius: 20%;
+    padding: .2rem;
+    background-color: beige;
+}
+.delete:hover{
+    cursor: pointer;
+    box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+
+
+
+
 button{
     background-color: red;
     color: white;
     padding: 1rem;
     width: fit-content;
     width: -moz-fit-content;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
     
+}
+button:active{
+    background-color: green;
+}
+footer{
+    /* take note  */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+
+    /* transform: translate(-50%, -50%); */
+    position: fixed;
+    /* border: 1px solid black; */
+    background-color: blanchedalmond;
+    /* background-image: ; */
+
 }

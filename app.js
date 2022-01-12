@@ -1,4 +1,6 @@
 const express = require('express');
+// const { render } = require('express/lib/response');
+// const res = require('express/lib/response');
 const app = express();
 const mongoose = require('mongoose');
 const Blog = require('./models/blog.js')
@@ -47,6 +49,7 @@ app.get('/about', (req, res)=>{
     res.render('about');
 })
 
+
 app.get('/blogs', (req, res)=>{
     Blog.find()
         .then(result => {
@@ -58,6 +61,7 @@ app.get('/blogs', (req, res)=>{
 
 app.post('/blogs', (req, res) => {
     const blog = new Blog(req.body);
+    // blog.save()
     blog.save()
         .then(result => {
             res.redirect('/blogs')
@@ -66,6 +70,37 @@ app.post('/blogs', (req, res) => {
 
 })
 
+app.get('/blogs/:id', (req, res)=>{
+    const id = req.params.id;
+    // console.log(id);
+    Blog.findById(id)
+        .then(result => {
+            res.render('details', { blog: result })
+        })
+        .catch(error => console.log(error))
+})
+
+app.delete('/blogs/:id', (req, res)=>{
+    const id = req.params.id;
+    
+    Blog.findByIdAndDelete(id)
+        .then(result => {
+            res.json({redirect : '/blogs'});
+
+        })
+        .catch(error => {console.log(error);})
+})
+
+// app.get('/blogs/create', (req, res)=>{
+//     res.render('create')
+// })
+
 app.get('/create/blogs', (req, res)=>{
     res.render('create')
+})
+
+
+//page 404
+app.use((req,res)=>{
+    res.send('OOPS, page not found :)');
 })
